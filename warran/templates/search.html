@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Inventory{% endblock title %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'search.css' %}">
+{% endblock head %}
+
+{% block body %}
+
+
+  
+
+		<h1>Item's Detail</h1>
+       <div class="container">
+			<form class="d-flex">
+				<input class="form-control me-2" name = "q" type="search" placeholder="Search" aria-label="Search">
+				<button class="btn btn-outline-success" type="submit">Search</button>
+		  </form>
+	   </div>
+		
+
+	  <table>
+      		 <tr id="header">
+       		     <th>PL NO:</th>
+        	     <th>RELATED PL NO:</th>
+        	     <th>UNIFIED PL NO:</th>
+         	     <th>DESCRIPTION:</th>
+            	 <th>AAC:</th>
+				 <th>SPECIFICATION NO:</th>
+				 <th>GUARANTEE/WARRANTY: </th>
+				 <th>CREATED DATE: </th>
+             </tr>
+			 {%  for data in data %}
+      	    <tr>
+          	     <td>{{data.plno}} </td>
+           		 <td>{{data.relatedplno}} </td>
+          	     <td>{{data.unifiedplno}} </td>
+          	     <td> {{data.desc}} </td>
+           		 <td>{{data.aac}} </td>
+				<td>{{data.specno}} </td>
+				<td>{{data.gw}} </td>
+				<td>{{data.date}} </td>
+
+        	</tr>
+			{% endfor %}
+      </table>
+
+	
+	
+
+	
+	
+
+
+{% endblock body %}
+
+

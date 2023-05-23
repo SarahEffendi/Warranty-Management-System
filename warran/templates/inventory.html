@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Inventory{% endblock title %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'inventory.css' %}">
+{% endblock head %}
+
+{% block body %}
+
+  
+
+		<h1>Item's Detail</h1>
+		<hr>	
+	  
+	  <table>
+      		 <tr id="header">
+       		     <th>PL NO:</th>
+        	     <th>RELATED PL NO:</th>
+        	     <th>UNIFIED PL NO:</th>
+         	     <th>DESCRIPTION:</th>
+            	 <th>AAC:</th>
+				 <th>SPECIFICATION NO:</th>
+				 <th>GUARANTEE/WARRANTY: </th>
+				 <th>CREATED DATE: </th>
+             </tr>
+			 {% for Inventory in invent %}
+      	    <tr>
+          	     <td>{{Inventory.plno}} </td>
+           		 <td>{{Inventory.relatedplno}} </td>
+          	     <td>{{Inventory.unifiedplno}} </td>
+          	     <td> {{Inventory.desc}} </td>
+           		 <td>{{Inventory.aac}} </td>
+				<td>{{Inventory.specno}} </td>
+				<td>{{Inventory.gw}} </td>
+				<td>{{Inventory.date}} </td>
+
+        	</tr>
+			{% endfor %}
+      </table>
+	
+
+	
+	
+
+
+{% endblock body %}
+
+

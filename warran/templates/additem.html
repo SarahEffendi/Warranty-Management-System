@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Inventary{% endblock title %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'additem.css' %}">
+{% endblock head %}
+
+{% block body %}
+
+
+
+  
+<div class="wrapper">
+	<div class="registration_form">
+		<div class="title">
+			Item details
+		</div>
+
+		<form method="POST" action="/additem">
+		{% csrf_token %}
+			<div class="form_wrap">
+				<div class="input_grp">
+					<div class="input_wrap">
+					<label for="plno">PL NO.</label>
+					<input type="text" id="plno" name="plno">
+				</div>
+				<div class="input_wrap">
+					<label for="realtedplno">Related PL NO.</label>
+					<input type="text" id="relatedplno" name="relatedplno">
+				</div>
+                 <div class="input_wrap">
+					<label for="unifiedplno">Unified PL NO.</label>
+					<input type="text" id="unifiedplno" name="unifiedplno">
+				</div>
+                </div>
+				<div class="input_wrap">
+					<label for="desc">Description</label>
+					<input type="text" id="desc" name="desc">
+				</div>    
+				<div class="input_wrap">
+					<label for="aac">AAC</label>
+					<input type="text" id="aac" name="aac">
+				</div>
+				<div class="input_wrap">
+					<label for="specno">Spec NO.</label>
+					<input type="text" id="specno" name="specno">
+				</div>
+                <div class="input_wrap">
+					<label for="gw">Guarantee/warranty</label>
+					<input type="text" id="gw" name="gw">
+				</div>
+				<div class="input_wrap">
+					<input type="submit" value="submit" class="submit_btn">
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+{% endblock body %}
